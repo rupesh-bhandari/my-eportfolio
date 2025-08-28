@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - The Atmosphere</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="nav-brand">Rupesh ePortfolio</a>
+    <nav class="nav-links">
+      <a href="fullstack.html">Full Stack</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html" class="active">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="content-section">
+        <div class="card">
+          <h2 class="card-title">Destination 3: CSS - The Atmosphere</h2>
+          <p class="card-description">CSS is the styling language that gives a website its look and feel...CSS styles the HTML elements of a page. It controls layout, colors, fonts, spacing, and overall design, making the website look attractive and responsive.</p>
+
+          <div class="css-demo-container">
+            <h3 class="demo-heading">The Pulsing Nebula</h3>
+            <div class="nebula-container" id="nebula-container">
+              <div class="nebula-item"></div>
+              <div class="nebula-item"></div>
+              <div class="nebula-item"></div>
+              <div class="nebula-item"></div>
+              <div class="nebula-item"></div>
+            </div>
+            <div class="demo-controls">
+              <button class="nav-button" onclick="changeNebulaColor()">Change Color</button>
+              <button class="nav-button" onclick="toggleNebulaAnimation()">Pause/Play</button>
+            </div>
+          </div>
+
+          <div class="navigation-buttons">
+            <a href="html.html" class="nav-button"><i class="fas fa-arrow-left"></i> Previous: HTML</a>
+            <a href="bootstrap.html" class="nav-button">Next: Bootstrap <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 The Dev Journey. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

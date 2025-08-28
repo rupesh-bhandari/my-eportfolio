@@ -1,0 +1,368 @@
+/* Custom CSS for the "Web Dev Journey" Portfolio */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --background-color: linear-gradient(to right, #bdc3c7, #2c3e50);
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: var(--background-color);
+    color: var(--primary-color);
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(44, 62, 80, 0.95);
+    color: var(--light-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--light-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    padding: 20px;
+}
+.nav-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* Hero Section (index.html) */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+}
+.hero-content {
+    animation: fadeInScale 1s ease-out;
+}
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+.cta-button {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #2980b9;
+}
+
+/* Content Sections (individual pages) */
+.page-section {
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+    padding-top: 100px; /* To account for fixed navbar */
+}
+.page-section.active {
+    display: block;
+}
+.content-section {
+    min-height: 90vh;
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    animation: slideInUp 0.8s ease-out;
+}
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.card-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Navigation Buttons for content pages */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+.nav-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* Full Stack Page */
+.diagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.diagram-item {
+    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+.diagram-item:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+.diagram-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+}
+.diagram-arrow {
+    color: var(--accent-color);
+}
+
+/* HTML Page */
+.html-demo-container {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+.html-tree {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #444;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+.tree-node {
+    margin-left: 20px;
+    position: relative;
+    padding: 5px 0;
+    color: #3498db;
+}
+.tree-node::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ddd;
+}
+.tree-node.parent {
+    margin-left: 0;
+}
+.tree-leaf {
+    color: #e74c3c;
+}
+
+/* CSS Page */
+.css-demo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nebula-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #34495e 0%, #2c3e50 100%);
+    border-radius: 50%;
+    margin: 2rem 0;
+    box-shadow: 0 0 25px rgba(44, 62, 80, 0.8);
+    overflow: hidden;
+}
+.nebula-item {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e74c3c;
+    opacity: 0.7;
+    animation: pulse 4s infinite, orbit 15s linear infinite;
+}
+.nebula-item:nth-child(1) { top: 40%; left: 40%; }
+.nebula-item:nth-child(2) { animation-delay: -3s; top: 20%; left: 70%; }
+.nebula-item:nth-child(3) { animation-delay: -6s; top: 80%; left: 30%; }
+.nebula-item:nth-child(4) { animation-delay: -9s; top: 50%; left: 10%; }
+.nebula-item:nth-child(5) { animation-delay: -12s; top: 60%; left: 90%; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.5); opacity: 0.9; }
+}
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+.demo-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* JS Page */
+.js-demo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote-box {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.quote-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+.quote-author {
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-align: right;
+    display: block;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: var(--light-color);
+    position: relative;
+}
